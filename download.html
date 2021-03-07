@@ -1,0 +1,89 @@
+<html>
+	<head>
+		<title>VirGenFunD - Download</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+	</head>
+
+	<style type="text/css">
+	.download a {
+		color: #0000FF;
+		text-decoration: none;
+	}
+	</style>
+<body>
+	<header>
+		<div class="container">
+			<div class="jumbotron" id="jumbotron">
+				<h1>VirGenFunD</h1>
+				<p>gut Viral Genes and Functional Classification database</p>
+				<a href="github address" class="button"><small>Follow me on</small>GitHub</a>
+				<div class="navi">
+					<div class="navi_tag">
+						<a align="left" href="index.html">HOME</a>
+					</div>
+					<div class="navi_tag">
+						<a align="left" href="download.html" target="">DOWNLOAD</a>
+					</div> 
+					<div class="navi_tag">
+						<a align="left" href="search.html" target="">SEARCH</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container download x" style="padding-top: 330px;">
+
+		<h2>Datasets download</h2>
+		<ul id="foo">
+			<li>
+				<a href="file/viral_gene_fasta.tar.gz" download="file/viral_gene_fasta.tar.gz" target="">viral_gene_fasta.tar.gz</a>:
+				3,351,765 viral gene sequences detected in metagenomics datasets of five diseases and the corresponding healthy controls. <br>
+			</li>
+			<li>
+				<a href="file/viral_gene_annotation.tar.gz" download="file/viral_gene_annotation.tar.gz" target="">viral_gene_annotation.tar.gz</a>:
+				Annotations for each viral gene including taxonomy, KEGG, ACLAME, and VirGenFunD category.
+			</li>
+			<li>
+				<a href="file/family_annotation2.txt" download="file/family_annotation2.txt" target="">family_annotation.txt</a>:
+				The functional annotation of ACLAME viral protein families.
+
+			</li>
+			<li>
+				<a href="file/function_category2.txt" download="file/family_annotation2.txt" target="">function_category.txt</a>:
+				The mapping file of functional annotation to VirGenFunD categories.
+			</li>
+			<li>
+				<a href="file/cate-function.txt" download="file/cate-function.txt" target="">cate-function.txt</a>:
+				The functional annotation of each VirGenFunD category.
+			</li>
+		</ul>
+	</div>
+	<div class="wrapper"></div>
+	<footer>
+		<div id="footer">Biomedical Informatics and System Biology Laboratory, BME, PKU </a>
+		</div>
+	</footer>
+
+</body>
+<script type="text/javascript">
+
+	window.onscroll=function(){
+		var scrollTop =document.documentElement.scrollTop||document.body.scrollTop;
+		if(scrollTop> 175 || window.innerWidth < 800 ){
+			document.getElementById("jumbotron").classList.add("fixed")
+			// document.querySelectorAll(".container")[1].style.paddingTop = "80px";
+		} else {
+			document.getElementById("jumbotron").classList.remove("fixed")
+		}
+	}
+	window.onload=function(){
+		if( window.innerWidth < 800 ){
+			document.getElementById("jumbotron").classList.add("fixed")
+			document.querySelectorAll(".container")[1].style.paddingTop = "80px";
+		} 
+	}
+	</script>
+</html>

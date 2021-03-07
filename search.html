@@ -1,0 +1,103 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>VirGenFunD - Search</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<script type="text/javascript" src="./js/jquery.min.js"></script>
+	<style type="text/css">
+	.download a {
+		color: #0000FF;
+		text-decoration: none;
+	}
+	.form-inline {
+		margin-bottom: 10px;
+	}
+	</style>
+</head>
+<body style="">
+	<header>
+		<div class="container">
+			<div class="jumbotron fixed" id="jumbotron">
+				<h1>VirGenFunD</h1>
+				<p>gut Viral Genes and Functional classification Database</p>
+				<a href="http://cqb.pku.edu.cn/ZhuLab/VirGenFunD/github%20address" class="button"><small>Follow me on</small>GitHub</a>				<div class="navi">
+				<div class="navi">
+					<div class="navi_tag">
+						<a align="left" href="http://cqb.pku.edu.cn/ZhuLab/VirGenFunD/index.html">HOME</a>
+					</div>
+					<div class="navi_tag">
+						<a align="left" href="http://cqb.pku.edu.cn/ZhuLab/VirGenFunD/download.html" target="">DOWNLOAD</a>
+					</div> 
+					<div class="navi_tag">
+						<a align="left" href="http://cqb.pku.edu.cn/ZhuLab/VirGenFunD/search.html" target="">SEARCH</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="container x" style="padding-top: 330px;">
+		<h2>Search VirGenFunD annotations for ACLAME family</h2>
+		<div class="form-inline">
+			<div class="form-group">
+				<label for="exampleInputName2">Family</label>
+				<input type="text" class="form-control family input" placeholder="family:all:999"> 
+			</div>
+			<button type="button" class="btn btn-info submit">Submit</button>
+		</div>
+		<pre class="pre">Result: <code><span class="result"></span></code></pre>
+	</div>
+	<div class="wrapper"></div>
+	<footer>
+			<div id="footer">Biomedical Informatics and System Biology Laboratory, BME, PKU</div>
+	</footer>
+</body>
+
+<script type="text/javascript">
+window.onscroll=function(){
+	var scrollTop =document.documentElement.scrollTop||document.body.scrollTop;
+	if(scrollTop> 175 || window.innerWidth < 800 ){
+		document.getElementById("jumbotron").classList.add("fixed")
+		// document.querySelectorAll(".container")[1].style.paddingTop = "80px";
+	} else {
+		document.getElementById("jumbotron").classList.remove("fixed")
+	}
+}
+window.onload=function(){
+	if( window.innerWidth < 800 ){
+		document.getElementById("jumbotron").classList.add("fixed")
+		document.querySelectorAll(".container")[1].style.paddingTop = "80px";
+	}
+}
+var map = {};
+$(document).ready(function () {
+	var txtfileOne = "./file/family_annotation.txt"
+     $.get(txtfileOne,function(responseTxt){
+     	lines = responseTxt.split("\r");
+     	lines.forEach(function (item) {
+     		ret = item.split("\t")
+     		map[ret[0]]= item
+     		// console.log(ret)
+     	})
+  	});
+});
+$(".submit").click(function() {
+	v = $(".family").val()
+	$(".pre").show();
+	if (v=="") {
+		$(".pre").html("family:all:999	go:0016787 - hydrolase activity	category03");
+	} else {
+		$(".pre").html(map[v]==undefined?"family:all:999	go:0016787 - hydrolase activity	category03":map[v]);
+	}
+});
+
+document.onkeydown = function (e) {
+    	var theEvent = window.event || e;
+    	var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+    	if (code == 13) {
+       		$(".submit").click();
+    	}
+	}
+
+</script>
+</html>

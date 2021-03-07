@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<title>VirGenFunD - Home</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/style.css">
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="jumbotron" id="jumbotron">
+					<h1>VirGenFunD</h1>
+					<p>gut Viral Genes and Functional classification Database</p>
+					<a href="https://github.com/lkyvirrrr2001/viruses_analyses/" class="button"><small>Follow me on</small>GitHub</a>
+					<div class="navi">
+						<div class="navi_tag">
+							<a align="left" href="index.html">HOME</a>
+						</div>
+						<div class="navi_tag">
+							<a align="left" href="download.html" target="">DOWNLOAD</a></div> 
+						<div class="navi_tag">
+							<a align="left" href="search.html" target="">SEARCH</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	
+		<div class="container x" style="padding-top: 330px;">
+			<h2>Introduction</h2>
+			<p>Viruses are important component of the human gut microbiota and have a key role in maintaining the well-being of the gut function. However, the role of viruses are neglected in the extensively microbiome-based studies which mainly focused on bacteria. Thus, the role of viruses in the microbial community remains incompletely understood, especially in the context of diseases. 
+			</p>
+			<p>
+			VirGenFunD (gut Viral Genes and Functional classification Database) is a database of disease-related viral genes with multi-level annotations. With well-designed pipeline for precise viral genes identification, the current version of VirGenFunD contains  3,351,765 viral gene sequences detected in metagenomics datasets of five diseases and the corresponding healthy controls: irritable bowel syndrome (IBS), type 2 diabetes (T2D), Crohn’s disease (CD), colorectal cancer (CRC) and liver cirrhosis (LC). We manually classified viral gene functions into 16 categories to facilitate systematic view of function of viruses in human gut. We provide the search function for the annotation of ACLAME protein family (all). 
+			</p>
+			<h2>Importance and Applications</h2>
+			<ul id="foo">
+				<li>To gain understanding of the function of viral protein families.</li>
+				<li>To understand the viral gene functions in human gut.</li>
+				<li>To serve as references of human gut and disease related gut viral gene catalog.</li>
+				<li>To aid the identification of viral markers between diseases and health.</li>
+			</ul>
+			<h2>Construction of VirGenFunD and related analyses pipeline</h2>
+			<div class="wrapper" style="height:auto">
+				<img class="pipeline" src="./img/pipeline.png" width="100px">
+			</div>
+			<h2>VirGenFunD statistics</h2>
+			<p>Comparison of number of annotations for viral sequences in VirGenFunD:</p>
+				<div class="wrapper" style="height:auto">
+					<object data="./file/table2.svg" type="image/svg+xml"></object>
+				</div>
+			<div>
+			</div>
+			<h2>Publication</h2>
+			<p>Mo Li, Chunhui Wang, Xiaoqing Jiang, Qian Guo, Congmin Xu, Zhongjie Xie, Peihong Wang, Jie Tan, Shufang Wu, Jinyuan Guo, Zhencheng Fang, Shiwei Zhu, Liping Duan, Huaiqiu Zhu. Characterization of human gut virome by analysis of multi-diseases gut metagenomes and disease-specific interactions.
+			</p>
+		</div>
+
+		<footer>
+			<div id="footer">Biomedical Informatics and System Biology Laboratory, BME, PKU</div>
+		</footer>
+	</body>
+	<script type="text/javascript">
+
+	window.onscroll=function(){
+		var scrollTop =document.documentElement.scrollTop||document.body.scrollTop;
+		if(scrollTop> 175 || window.innerWidth < 800 ){
+			document.getElementById("jumbotron").classList.add("fixed")
+			// document.querySelectorAll(".container")[1].style.paddingTop = "80px";
+		} else {
+			document.getElementById("jumbotron").classList.remove("fixed")
+		}
+	}
+	window.onload=function(){
+		if( window.innerWidth < 800 ){
+			document.getElementById("jumbotron").classList.add("fixed")
+			document.querySelectorAll(".container")[1].style.paddingTop = "80px";
+		} 
+	}
+	</script>
+</html>
